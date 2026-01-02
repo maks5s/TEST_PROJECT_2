@@ -40,6 +40,21 @@ To run this project, follow these steps:
    pip install -r requirements.txt
    ```
 
+---
+
+## Web Server
+
+### Running the web server from optional task #1.
+
+1. Activate the virtual environment
+2. Navigate to the project directory
+3. Run the project with the command:
+   ```bash
+   python server.py
+   ```
+
+---
+
 ## Project Structure
 
 ```
