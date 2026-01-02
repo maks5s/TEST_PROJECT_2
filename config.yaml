@@ -1,0 +1,34 @@
+# This configuration file contains default settings used by application when no configuration data is provided.
+# In case if you want to rewrite provided configuration via env variable, please follow next variable pattern:
+# <env_prefix>_<env_group>__<env_name>=<env_value>
+# where:
+#  <env_prefix> - prefix of the environment type (`be`)
+#  <env_group> - group to which variable belongs to (example: DATABASE)
+#  <env_name> - env name (example: USER)
+#  <env_value> - env value
+# For example in your .env file or via CLI export command you could pass the variable like this:
+# BE_DATABASE__USER=frpm
+#
+# Each group can have a subgroup. Groups and subgroups are divided by __ delimiter between each other and the variable:
+# Example: BE_DATABASE__MY_SUB_GROUP__VARIABLE_A=ok is equivalent to:
+# database:
+#  my_sub_group:
+#    variable_a: ok
+#
+# IMPORTANT NOTE: variable name described here, but not in the Settings class, will have no effect.
+debug: true
+db:
+  name: "application"
+  fl_name_template: "{}.db3"
+  engine_template: "sqlite:///{}"
+data:
+  dir: data
+log:
+  dir: logs
+  name: "application_log"
+  config:
+    level: "DEBUG"
+    timestamp_format: "%Y-%m-%d::%H:%M:%S"
+    log_format: "[{level}] [{timestamp}] {message}"
+    coloring: true
+    use_stdout: true
